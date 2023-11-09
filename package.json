@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "homepage": "https://gitname.github.io/pharaohx" , 
+=======
+  "homepage": "https://bahaadagher.github.io/pharaohxDagher" , 
+>>>>>>> 4de720002dab6c405bc4f049ff746dd13432b310
   "name": "calculator",
   "version": "0.1.0",
   "private": true,
@@ -21,7 +25,11 @@
   },
   "scripts": {
     "predeploy": "npm run build",
+<<<<<<< HEAD
     "deploy": "gh-pages -d build",
+=======
+     "deploy": "gh-pages -d build",
+>>>>>>> 4de720002dab6c405bc4f049ff746dd13432b310
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
