@@ -20,9 +20,9 @@ const Text = styled("div")(({ theme }) => ({
     display : "flex" ,
     justifyContent : "flex-start" ,
     marginBottom : "10px" ,
-    [theme.breakpoints.down("600")] : {
+    [theme.breakpoints.down("700")] : {
         
-        fontSize : "20px" , 
+        fontSize : "16px" , 
     },
 }));
 const Utility = () => {

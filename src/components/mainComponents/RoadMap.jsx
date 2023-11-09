@@ -52,7 +52,10 @@ const Text = styled("div")(({ theme }) => ({
         top: '50%', // Position it toward the bottom of the parent
         transform: 'translateY(-50%)', // Adjust it based on its height
         left : "-40px"
-        },
+    },
+    "&.line" : {
+        textDecoration : "line-through" ,
+    }
 }));
 // second container 
 const SecondContainer = styled("div")(({ theme }) => ({
@@ -88,6 +91,9 @@ const Info = styled("div")(({ theme }) => ({
         transform: 'translateY(-50%)', // Adjust it based on its height
         left : "-40px"
     },
+    "&.line" : {
+        textDecoration : "line-through" ,
+    },
     [theme.breakpoints.down("1000")] : {
         fontSize : "20px" , 
     },
@@ -120,9 +126,9 @@ const Info = styled("div")(({ theme }) => ({
                         <Img src = {triangle}/>
                     </Section>
                     <TextContainer>
-                        <Text style = {{left : "115px"}}>Draw layers and create collection</Text>
-                        <Text style = {{left : "130px"}}>Create social accounts</Text>
-                        <Text style = {{left : "145px"}}>Create website and start working on the Alpha platform</Text>
+                        <Text style = {{left : "115px"}} className='line'>Draw layers and create collection</Text>
+                        <Text style = {{left : "130px"}} className='line'>Create social accounts</Text>
+                        <Text style = {{left : "145px"}} className='line'>Create website and start working on the Alpha platform</Text>
                         <Text style = {{left : "160px"}}>Promoting, make a partnerships and building a strong community</Text>
                         <Text style = {{left : "175px"}}>Start collection Minting</Text>
                         <Text style = {{left : "190px"}}>NFTs reveal</Text>
@@ -139,9 +145,9 @@ const Info = styled("div")(({ theme }) => ({
             <SecondContainer id = "roadmap">
                 <GoldDiv/>
                 <InformationContainer>
-                    <Info >Draw layers and create collection</Info>
-                    <Info >Create social accounts</Info>
-                    <Info >Create website and start working on the Alpha platform</Info>
+                    <Info className='line'>Draw layers and create collection</Info>
+                    <Info className='line'>Create social accounts</Info>
+                    <Info className='line'>Create website and start working on the Alpha platform</Info>
                     <Info >Promoting, make a partnerships and building a strong community</Info>
                     <Info >Start collection Minting</Info>
                     <Info >NFTs reveal</Info>

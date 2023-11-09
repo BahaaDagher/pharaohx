@@ -11,6 +11,9 @@ import volumeHigh from "../../assets/volume-high.svg"
 import mute from "../../assets/mute.svg"
 import { Divider } from '../Divider';
 import sound from "../../assets/sound.mp3"
+import menu from "../../assets/menu.png"
+import { useTheme } from 'styled-components';
+import { Dropdown } from 'bootstrap';
 
 const Parent = styled("div")(({ theme }) => ({
     display : "flex" , 
@@ -29,43 +32,29 @@ const Container = styled(FlexSpaceBetween)(({ theme }) => ({
     // border : "1px solid red" ,
     width : "100%" ,
     height : "100%" ,
-    [theme.breakpoints.down("1200")] : {
-        flexDirection : "column" ,
-        alignItems : "center" ,
-    },
+    
 }));
 const LogoContainer = styled(FlexCenter)(({ theme }) => ({
-    [theme.breakpoints.down("1200")] : {
-        margin : "10px" ,
-    },
+   
 }));
 const Img = styled("img")(({ theme }) => ({
     width : "70px" , 
     [theme.breakpoints.down("1200")] : {
         width : "50px" ,
     },
-    [theme.breakpoints.down("600")] : {
-        width : "35px" , 
-    },
 }));
 const LogoName = styled("div")(({ theme }) => ({
     fontSize : "30px" ,
-    marginLeft : "10px" ,
+    margin : "0 15px" ,
     [theme.breakpoints.down("1200")] : {
-        fontSize : "25px" ,
-    },
-    [theme.breakpoints.down("600")] : {
-        fontSize : "18px" , 
+        fontSize : "20px" ,
     },
 }));
 const List = styled(FlexSpaceBetween)(({ theme }) => ({
     width : "460px" ,
     [theme.breakpoints.down("1200")] : {
         marginBottom : "10px" ,
-    },
-    [theme.breakpoints.down("600")] : {
-        width : "100%" ,
-        justifyContent : "space-around" ,
+        display : "none" ,
     },
 }));
 const Tab = styled("a")(({ theme }) => ({
@@ -88,9 +77,8 @@ const Tab = styled("a")(({ theme }) => ({
 }));
 const Buttons = styled(FlexSpaceBetween)(({ theme }) => ({
     width : "200px" ,
-    [theme.breakpoints.down("1200")] : {
-        marginBottom : "10px" ,
-    },
+   
+    
 }));
 const ImageContainer = styled(FlexCenter)(({ theme }) => ({
     cursor : "pointer" ,
@@ -104,8 +92,57 @@ const ImgButton = styled("img")(({ theme }) => ({
     [theme.breakpoints.down("600")] : {
         width : "25px" , 
     },
+    [theme.breakpoints.down("400")] : {
+        width : "25px" , 
+    },
 }));
+const MenuDiv = styled(FlexCenter)(({ theme }) => ({
+    display : "none" ,
+    cursor : "pointer" , 
+    [theme.breakpoints.down("1200")] : {
+        display : "flex" ,
+    },
+}));
+const MenuIcon = styled("img")(({ theme }) => ({
+    width : "30px" , 
+    height : "30px" , 
+}));
+const DropdownContainer = styled(FlexCenter)(({ theme }) => ({
+    backgroundColor : "#0000008f" ,
+    width : "100%" ,
+    position : "absolute" ,
+    left : "0" , 
+    top : "85px" , 
+    zIndex : "100" ,
 
+}));
+const DropdownMenu = styled(FlexSpaceBetween)(({ theme }) => ({
+    width : "60%" , 
+    padding : "20px", 
+    [theme.breakpoints.down("800")] : {
+        width : "80%" , 
+    },
+    [theme.breakpoints.down("600")] : {
+        flexDirection : "column" ,
+        textAlign : "left" ,  
+        width : "100%" , 
+    },
+}));
+const DropdownItem = styled("a")(({ theme }) => ({
+    textDecoration : "none" ,
+    fontSize : "25px" ,
+    color : "#fff" ,
+    transition : "all 0.3s ease" , 
+    [theme.breakpoints.down("600")] : {
+        fontSize : "20px" ,
+        padding : "5px 15px" ,
+        borderBottom : `1px solid ${Colors.gold}` ,
+    },
+    cursor : "pointer" ,
+    "&:hover" : {
+        color : Colors.gold ,
+    }
+}));
 const Navbar = () => {
     const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -120,10 +157,14 @@ const Navbar = () => {
         setIsPlaying(!isPlaying); 
       }
     };
+    const [extend , setExtend] = useState(false)
+    const handleExtend = () => {
+        setExtend(!extend)
+    }
   return (
     <>
         <audio ref={audioRef} src={sound} />
-        <Parent style = {{position : "sticky" , top : "0" , zIndex :"5"}} >
+        <Parent style = {{position : "relative"}} >
             <Container>
                 <LogoContainer>
                     <Img src = {Logo} draggable="false" />
@@ -135,7 +176,7 @@ const Navbar = () => {
                     <Tab href="#roadmap">roadMap</Tab>
                     <Tab href="#Faqs" >Faqs</Tab>
                 </List>
-                <Buttons>
+                <Buttons >
                     <ImageContainer onClick={playSound} >
                         <ImgButton  src={!isPlaying ? mute : volumeHigh }/>
                     </ImageContainer>
@@ -145,7 +186,20 @@ const Navbar = () => {
                     <ImageContainer onClick={()=>{window.location.href= "https://discord.com/invite/ZqUZKf9vmW"}}>
                         <ImgButton src = {discord}/>
                     </ImageContainer>
+                    <MenuDiv onClick= {handleExtend}>
+                        <MenuIcon src = {menu}/>
+                    </MenuDiv>
                 </Buttons>
+                {extend&& 
+                    <DropdownContainer>
+                        <DropdownMenu>
+                            <DropdownItem href="#mission" onClick= {handleExtend}> our mission </DropdownItem>
+                            <DropdownItem href="#utility" onClick= {handleExtend}>utility</DropdownItem>
+                            <DropdownItem href="#roadmap" onClick= {handleExtend}>roadMap</DropdownItem>
+                            <DropdownItem href="#Faqs" onClick= {handleExtend}>Faqs</DropdownItem>
+                        </DropdownMenu>
+                    </DropdownContainer>
+                }
             </Container>
         </Parent>
     </>

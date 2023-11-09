@@ -70,7 +70,7 @@ const Drop = styled(FlexCenter)(({ theme }) => ({
 }));
 const DropTitle = styled("div")(({ theme }) => ({
     fontSize : "30px" ,
-    color : Colors.gold  , 
+    color : "#fff"  , 
     [theme.breakpoints.down("600")] : {
         fontSize : "20px" ,
     } , 

@@ -7,6 +7,15 @@ import { FlexSpaceBetween } from '../FlexSpaceBetween';
 import { FlexCenter } from '../FlexCenter';
 import { Hidden } from '@mui/material';
 import styled from '@emotion/styled';
+
+const SonParent = styled(Parent)(({ theme }) => ({
+  paddingBottom : "20px" , 
+  [theme.breakpoints.down('700')]: {
+    padding : "60px 10px 0 10px" ,
+  },
+
+}));
+
 const DropDown = styled("div")(({ theme }) => ({
   width: "90%",
   borderRadius : "20px" , 
@@ -69,7 +78,7 @@ const FAQ = () => {
   }
   return (
     <>
-      <Parent id = "Faqs" style = {{paddingBottom : "20px"}}>
+      <SonParent id = "Faqs">
         <Title>FAQ</Title>
         <DropDown>
           <FlexSpaceBetween onClick={handleFirst} style = {{cursor : "pointer"}} >
@@ -115,7 +124,7 @@ const FAQ = () => {
             </TextDiv>
           </HiddenDiv>
         </DropDown>
-      </Parent>
+      </SonParent>
     </>
   )
 }
