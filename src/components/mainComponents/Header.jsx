@@ -61,6 +61,7 @@ const Drop = styled(FlexCenter)(({ theme }) => ({
     padding : "0px 30px" ,
     margin  : "0 auto" , 
     marginTop : "100px" , 
+    cursor : "pointer" ,
     [theme.breakpoints.down("600")] : {
         width : "100%" , 
         margin : "0 auto" , 
@@ -127,7 +128,10 @@ const Header = () => {
 
     return () => clearInterval(interval);
   }, [title, reverse]);
-
+  const handleDropClick = () => {
+    // Open the link in a new tab
+    window.open("https://opensea.io/collection/pharaohx/overview", '_blank');
+  };
   return (
     <>
         <Parent style = {{backgroundColor : Colors.gold }}>
@@ -138,7 +142,7 @@ const Header = () => {
                     <Caret className = {finished && "move"}>|</Caret> 
                 </FlexCenter>
             </WelcomeDiv>
-            <Drop>
+            <Drop onClick={handleDropClick}>
                 <DropTitle>will drop on opensea</DropTitle>
                 <DropImg src = {ship}/>
             </Drop>

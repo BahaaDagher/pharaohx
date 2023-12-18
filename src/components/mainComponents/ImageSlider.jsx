@@ -65,9 +65,7 @@ const AppContainer = styled.div`
   justify-content: center;
   padding : 10px 0 ;
   border-top : 2px solid ${Colors.gold} ;
-    border-bottom : 2px solid ${Colors.gold} ;
-    
-    
+  border-bottom : 2px solid ${Colors.gold} ;
 `;
 const Wrapper = styled.div`
   width: 100%;

@@ -12,34 +12,34 @@ import Footer from './components/mainComponents/Footer';
 import { Element } from 'react-scroll';
 import { useEffect } from 'react';
 function App() {
-  useEffect(() => {
-    const preventContextMenu = (e) => {
-      e.preventDefault();
-    };
+  // useEffect(() => {
+  //   const preventContextMenu = (e) => {
+  //     e.preventDefault();
+  //   };
 
-    window.addEventListener('contextmenu', preventContextMenu);
+  //   window.addEventListener('contextmenu', preventContextMenu);
 
-    return () => {
-      window.removeEventListener('contextmenu', preventContextMenu);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('contextmenu', preventContextMenu);
+  //   };
+  // }, []);
 
-  // Prevent developer tools shortcuts
-  useEffect(() => {
-    const preventDevToolsShortcuts = (e) => {
-      if ((e.ctrlKey && e.shiftKey && e.keyCode === 73) ||   // Ctrl+Shift+I
-          (e.ctrlKey && e.shiftKey && e.keyCode === 74) ||   // Ctrl+Shift+J
-          (e.keyCode === 123)) {                              // F12
-        e.preventDefault();
-      }
-    };
+  // // Prevent developer tools shortcuts
+  // useEffect(() => {
+  //   const preventDevToolsShortcuts = (e) => {
+  //     if ((e.ctrlKey && e.shiftKey && e.keyCode === 73) ||   // Ctrl+Shift+I
+  //         (e.ctrlKey && e.shiftKey && e.keyCode === 74) ||   // Ctrl+Shift+J
+  //         (e.keyCode === 123)) {                              // F12
+  //       e.preventDefault();
+  //     }
+  //   };
 
-    window.addEventListener('keydown', preventDevToolsShortcuts);
+  //   window.addEventListener('keydown', preventDevToolsShortcuts);
 
-    return () => {
-      window.removeEventListener('keydown', preventDevToolsShortcuts);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('keydown', preventDevToolsShortcuts);
+  //   };
+  // }, []);
 
   return (
     <>

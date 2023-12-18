@@ -7,18 +7,29 @@ import { useTheme } from "@emotion/react";
 const Text = styled('div')({
   color: '#fff',
   fontSize: '75px',
+  width: '100%',
+  height: '100%',
   '@media (max-width: 950px)': {
     fontSize: '50px',
   },
 
-  // Media query for screens even smaller
-  '@media (max-width: 700px)': {
-    fontSize: '30px',
-  },
+  // // Media query for screens even smaller
+  // '@media (max-width: 700px)': {
+  //   fontSize: '30px',
+  // },
 
-  '@media (max-width: 500px)': {
-    fontSize: '20px',
-  },
+  // '@media (max-width: 500px)': {
+  //   fontSize: '20px',
+  // },
+});
+const TextContainer = styled('div')({
+    width : "500px" ,
+    flex: '0 0 320px' , 
+    textAlign : "center" ,
+    margin : "0 10px" ,  
+    '@media (max-width: 900px) ': {
+    width : "320px" , 
+    } , 
 });
 
 function RoadMapSlider() {
@@ -38,14 +49,27 @@ function RoadMapSlider() {
       <Wrapper>
         <Marquee>
           <MarqueeGroup>
-            <Text>roadmap</Text>
-            <Text>roadmap</Text>
-            <Text>roadmap</Text>
+            <TextContainer>
+              <Text>roadmap</Text>
+            </TextContainer>
+            <TextContainer>
+              <Text>roadmap</Text>
+            </TextContainer>
+            <TextContainer>
+              <Text>roadmap</Text>
+            </TextContainer>
           </MarqueeGroup>
-            <MarqueeGroup>
+
+          <MarqueeGroup>
+            <TextContainer>
               <Text>roadmap</Text>
+            </TextContainer>
+            <TextContainer>
               <Text>roadmap</Text>
+            </TextContainer>
+            <TextContainer>
               <Text>roadmap</Text>
+            </TextContainer>
             </MarqueeGroup>
         </Marquee>
       </Wrapper>
@@ -86,12 +110,15 @@ const scrollX = keyframes`
 `;
 
 const common = css`
-  flex-shrink: 0;
+
+
+
   display: flex;
   align-items: center;
   justify-content: space-around;
   white-space: nowrap;
-  width: 100%;
+  ${'' /* width: 100%; */}
+    flex: 0 0 100px; 
   animation: ${scrollX} 10s linear infinite;
 `;
 

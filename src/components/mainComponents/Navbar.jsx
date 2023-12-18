@@ -161,6 +161,10 @@ const Navbar = () => {
     const handleExtend = () => {
         setExtend(!extend)
     }
+    
+    const openLinkInNewTab = (url) => {
+        window.open(url, '_blank');
+    };
   return (
     <>
         <audio ref={audioRef} src={sound} />
@@ -180,10 +184,10 @@ const Navbar = () => {
                     <ImageContainer onClick={playSound} >
                         <ImgButton  src={!isPlaying ? mute : volumeHigh }/>
                     </ImageContainer>
-                    <ImageContainer onClick={()=>{window.location.href= "https://twitter.com/pharaohxnft"}}>
+                    <ImageContainer onClick={() => openLinkInNewTab("https://twitter.com/pharaohxnft")}>
                         <ImgButton  src = {x}/>
                     </ImageContainer>
-                    <ImageContainer onClick={()=>{window.location.href= "https://discord.com/invite/ZqUZKf9vmW"}}>
+                    <ImageContainer onClick={() => openLinkInNewTab("https://discord.com/invite/ZqUZKf9vmW")}>
                         <ImgButton src = {discord}/>
                     </ImageContainer>
                     <MenuDiv onClick= {handleExtend}>

@@ -11,7 +11,7 @@ import styled from '@emotion/styled';
 const SonParent = styled(Parent)(({ theme }) => ({
   paddingBottom : "20px" , 
   [theme.breakpoints.down('700')]: {
-    padding : "60px 10px 0 10px" ,
+    padding : "60px 5px 0 5px" ,
   },
 
 }));
@@ -25,6 +25,7 @@ const DropDown = styled("div")(({ theme }) => ({
   marginBottom : "20px" ,
   [theme.breakpoints.down('500')]: {
     width: "100%",
+    padding : "10px" , 
   },
   
 }));
@@ -39,14 +40,14 @@ const Text = styled("div")(({ theme }) => ({
     fontSize : "25px" ,
   },
   [theme.breakpoints.down('500')]: {
-    fontSize : "18px" ,
+    fontSize : "17px" ,
   },
   
 }));
 const Img = styled("img")(({ theme }) => ({
   marginLeft : "10px" ,
   [theme.breakpoints.down('800')]: {
-    width : "50px" ,
+    width : "40px" ,
   },
 }));
 const Divider = styled("div")(({ theme }) => ({
@@ -81,7 +82,7 @@ const FAQ = () => {
       <SonParent id = "Faqs">
         <Title>FAQ</Title>
         <DropDown>
-          <FlexSpaceBetween onClick={handleFirst} style = {{cursor : "pointer"}} >
+          <FlexSpaceBetween onClick={handleFirst} style = {{cursor : "pointer" , alignItems : "center"}} >
             <TextDiv>
               <Text>Which network will pharaohx live on ?</Text>
             </TextDiv>
@@ -96,7 +97,7 @@ const FAQ = () => {
         </DropDown>
 
         <DropDown>
-          <FlexSpaceBetween onClick={handleSecond} style = {{cursor : "pointer"}}>
+          <FlexSpaceBetween onClick={handleSecond} style = {{cursor : "pointer"  , alignItems : "center"}}>
             <TextDiv>
               <Text>How many pharaohx will there be ?</Text>
             </TextDiv>
@@ -105,13 +106,13 @@ const FAQ = () => {
           <HiddenDiv className = {!second? "hidden" : ""}>
             <Divider/>
             <TextDiv>
-                <Text>3.333</Text>
+                <Text>2.222</Text>
             </TextDiv>
           </HiddenDiv>
         </DropDown>
 
         <DropDown>
-          <FlexSpaceBetween onClick={handleThird} style = {{cursor : "pointer"}} >
+          <FlexSpaceBetween onClick={handleThird} style = {{cursor : "pointer" ,  alignItems : "center"}} >
             <TextDiv>
               <Text>When will pharaohx mint ?</Text>
             </TextDiv>

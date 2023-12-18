@@ -129,8 +129,8 @@ const Info = styled("div")(({ theme }) => ({
                         <Text style = {{left : "115px"}} className='line'>Draw layers and create collection</Text>
                         <Text style = {{left : "130px"}} className='line'>Create social accounts</Text>
                         <Text style = {{left : "145px"}} className='line'>Create website and start working on the Alpha platform</Text>
-                        <Text style = {{left : "160px"}}>Promoting, make a partnerships and building a strong community</Text>
                         <Text style = {{left : "175px"}}>Start collection Minting</Text>
+                        <Text style = {{left : "160px"}}>Promoting, make a partnerships and building a strong community</Text>
                         <Text style = {{left : "190px"}}>NFTs reveal</Text>
                         <Text style = {{left : "205px"}}>Pharaohx.eth subdomain distributing</Text>
                         <Text style = {{left : "220px"}}>6% Creator earnings distributing</Text>
@@ -148,8 +148,8 @@ const Info = styled("div")(({ theme }) => ({
                     <Info className='line'>Draw layers and create collection</Info>
                     <Info className='line'>Create social accounts</Info>
                     <Info className='line'>Create website and start working on the Alpha platform</Info>
-                    <Info >Promoting, make a partnerships and building a strong community</Info>
                     <Info >Start collection Minting</Info>
+                    <Info >Promoting, make a partnerships and building a strong community</Info>
                     <Info >NFTs reveal</Info>
                     <Info >Pharaohx.eth subdomain distributing</Info>
                     <Info >6% Creator earnings distributing</Info>
